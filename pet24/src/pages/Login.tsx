@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 
 
@@ -19,7 +20,7 @@ const LoginStyle = styled.div`
         align-items: center;
         flex-direction: column;
     }
-    .login-image-wrapper{
+    .login-userimage-wrapper{
         width: 65%;
         height: 100vh;
         min-height: 100vh;
@@ -60,6 +61,8 @@ const LoginStyle = styled.div`
         width: 30vw;
         min-width: 350px;
         background-color: #F1F3F6;
+        border: 0;
+        margin-top: 5px;
     }
 
     .user-image-container{
@@ -71,6 +74,60 @@ const LoginStyle = styled.div`
     .user-image-container > img{
         height: 500px;
         width: 700px;
+    }
+    .forgotpassword {
+        margin: 5px 0 0 300px;
+        font-size: 14px;
+        color: #7a7a7a;
+        text-decoration: "none";
+        text-decoration-line: none;
+        cursor: pointer;
+        &:hover {
+            color: #71adcb;
+        }
+    }
+    .login-btn{
+        height: 40px;
+        width: 31vw;
+        min-width: 355px;
+        max-width: 470px;
+        padding: 0;
+        font-weight: 600;
+        text-align: center;
+        border: 0px;
+        line-height: 22px;
+        margin-top: 30px;
+        color: #ffffff;
+        border-radius: 5px;
+        background-color: #548EAD;
+        cursor: pointer;
+        &:hover{
+            background-color: #7399ac;
+        }
+    }
+    .login-line{
+        position: absolute; 
+        width: 40px;
+        height: 1px;
+        border-top: 3px solid black;
+        margin-top: 30px;
+
+    }
+
+    .google-login-wrapper{
+        height: 70px;
+        background-color: #71adcb;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+        margin-top: 30px;
+        border: solid 1 1 1 1 #7399ac;
+    }
+    .google-login-wrapper > img {
+        height: 48px;
+        width: 48px;
+        cursor: pointer;
     }
 `
 
@@ -86,7 +143,7 @@ export const Login = () => {
                         <button>back</button>
                     </div>
                     <div className="login-logo-wrapper">
-                        <img src="/img/logo.png" alt="login-logo"></img>
+                        <Link to={"/"}><img src="/img/logo.png" alt="login-logo"></img></Link>
                         <span>Login into your account</span>
                     </div>
                     <div className="login-info-wrapper">
@@ -95,10 +152,14 @@ export const Login = () => {
                         <span >Password</span>
                         <input type="password" placeholder="Enter your password"></input>
                     </div>
-                    <button>Login</button>
+                    <span className="forgotpassword"><Link to={''}>Forgot password?</Link></span>
+                    <button className="login-btn">Login Now</button>
+                    <div className="google-login-wrapper">
+                        <img src="/img/googleLogo.png" alt="google-logo"></img>
+                    </div>
 
                 </div>
-                <div className="login-image-wrapper">
+                <div className="login-userimage-wrapper">
                     <div className="user-image-container">
                         <img src="/img/userImage.png" alt="user"></img>
                     </div>
