@@ -1,29 +1,51 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
-import styled from 'styled-components'; // 에러 : Could not find a declaration file for module 'styled-components'. 해결하기위해서 참조 : https://garniel23.tistory.com/entry/%EC%97%90%EB%9F%AC-%ED%95%B4%EA%B2%B0-styled-components-Could-not-find-declaration-file
+import { Route, Routes,} from 'react-router-dom';
+import styled from 'styled-components';
 
-import { NavBar } from './components/navBar';
+import { Home } from './pages/Home';
+import { Blogs } from './pages/Blogs';
+import { About } from './pages/About';
+import { AnimalHospital } from './pages/AnimalHospital';
+import { Login } from './pages/Login';
+import { MainLayout } from './components/mainLayout'
+
+
+
 
 
 const Parent = styled.div`
-  min-width: 100vh;
+  min-width: 1080px;
+  max-width: 100vw;
   width: 100vw;
   height: 100vh;
   background-color: #d8d8d8;
 `
 
 
-
-
 function App() {
 
-
-
   return (
-    <Parent>
-      <NavBar></NavBar>
-    </Parent>
+    <div className="App">
+      <Parent>
+        {/* <NavBar></NavBar> */}
+        <Routes>
+          <Route path='/' element={<MainLayout/>}>
+            <Route path='/' element={<Home/>}/>
+            <Route path='hospital' element={<AnimalHospital/>}></Route>
+            <Route path='blogs' element={<Blogs/>}></Route>
+            <Route path='about' element={<About/>}></Route>
+          </Route>
+          <Route>
+            <Route path='/login' element={<Login/>}></Route>
+          </Route>
+        </Routes>
+      </Parent>
+
+    </div>
   );
 }
 
 export default App;
+
+
