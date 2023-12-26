@@ -1,11 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
-import { SignIn } from "../components/Login/SignIn";
-
-const LoginStyle = styled.div`
+const SignInStyle = styled.div`
     min-width: 1080px;
     min-height: 100vh;
     width: 100vw;
@@ -15,6 +13,7 @@ const LoginStyle = styled.div`
 
     .login-container{
         width: 35%;
+        height: 100vh;
         min-height: 100vh;
         background-color: #FFFFFF;
         display: flex;
@@ -37,7 +36,7 @@ const LoginStyle = styled.div`
 
     .login-userimage-wrapper{
         width: 65%;
-        height: 100vh;
+        height: 30vh;
         min-height: 100vh;
         background-color: #dbdbdb;
         display: flex;
@@ -49,7 +48,6 @@ const LoginStyle = styled.div`
         height: 250px;
         background-color: #FFFFFF;
         margin-top: 10px;
-        padding: 20px;
         display: flex;
         flex-direction: column;
     }
@@ -124,7 +122,7 @@ const LoginStyle = styled.div`
         }
     }
     .vet-login-here{
-        margin: 10px 0 20px 0px;
+        margin: 10px 0 20px 0px !important;
         font-size: 14px;
         color: #7a7a7a;
         text-decoration: "none";
@@ -142,25 +140,6 @@ const LoginStyle = styled.div`
         padding: 0;
         font-weight: 600;
         text-align: center;
-        border: 0px;
-        line-height: 22px;
-        margin-top: 20px;
-        color: #ffffff;
-        border-radius: 5px;
-        background-color: #548EAD;
-        cursor: pointer;
-        &:hover{
-            background-color: #7399ac;
-        }
-    }
-    .signin-btn{
-        height: 40px;
-        width: 31vw;
-        min-width: 355px;
-        max-width: 470px;
-        padding: 0;
-        font-weight: 600;
-        text-align: center;
         border: solid 2px #548EAD;
         line-height: 22px;
         margin-top: 20px;
@@ -171,6 +150,27 @@ const LoginStyle = styled.div`
         &:hover{
             background-color: #7399ac;
             color: #ffffff;
+        }
+    }
+
+
+    .signin-btn{
+        height: 40px;
+        width: 31vw;
+        min-width: 355px;
+        max-width: 470px;
+        padding: 0;
+        font-weight: 600;
+        text-align: center;
+        border: 0px;
+        line-height: 22px;
+        margin-top: 20px;
+        color: #ffffff;
+        border-radius: 5px;
+        background-color: #548EAD;
+        cursor: pointer;
+        &:hover{
+            background-color: #7399ac;
         }
     }
     .google-login-wrapper{
@@ -220,51 +220,48 @@ const LoginStyle = styled.div`
 
 
 
-export const Login = () => {
-    const location = useLocation();
-    console.log(location.pathname)
+export const SignIn = () => {
+
     return (
-        <>
-            <LoginStyle>
-                <div className="login-container">
-                    <div className="cancel-wrapper">
+        <SignInStyle>
+            <div className="login-container">
+                <div className="cancel-wrapper">
                         <Link to={'/'}><img className="cancel-btn" src="/img/cancel_Image.png" alt="cancel"></img></Link>
-                    </div>
-                    <div className="login-logo-wrapper">
-                        <Link to={"/"}><img src="/img/logo.png" alt="login-logo"></img></Link>
-                        <span>Login into your account</span>
-                    </div>
-                    <div className="login-info-wrapper">
-                        <span>Email </span>
-                        <input type="text" placeholder="alex@email.com"></input>
-                        <span >Password</span>
-                        <input type="password" placeholder="Enter your password"></input>
-                    </div>
-                    <span className="forgotpassword"><Link to={''}>Forgot password?</Link></span>
-                    <button className="login-btn">Login Now</button>
-                    <div className="line-wrapper">
-                        <div className="line">OR</div>
-                    </div>
+                </div>
+                <div className="login-logo-wrapper">
+                    <Link to={"/"}><img src="/img/logo.png" alt="login-logo"></img></Link>
+                    <span>Welcome to Sing In !</span>
+                </div>
+                <div className="login-info-wrapper">
+                    <span>Email </span>
+                    <input type="text" placeholder="alex@email.com"></input>
+                    <span >Last Name</span>
+                    <input type="text" placeholder="Enter your password"></input>
+                    <span >First Name</span>
+                    <input type="text" placeholder="Enter your password"></input>
+                    <span >Password</span>
+                    <input type="password" placeholder="Enter your password"></input>
+                    <span >Confirm Password</span>
+                    <input type="password" placeholder="Enter your password"></input>
+                </div>
+                <span className="forgotpassword"><Link to={''}>Forgot password?</Link></span>
+                <button className="signin-btn">Sign in Now</button>
 
-                    <div className="google-login-wrapper">
-                        <img src="/img/googleLogo.png" alt="google-logo"></img>
-                    </div>
+                <div className="line-wrapper">
+                    <div className="line">OR</div>
+                </div>
 
-                    <div className="line-wrapper">
-                        <div className="line">OR</div>
-                    </div>
-
-                    <Link to={'/signin'}><button className="signin-btn">Sign in</button></Link>
+                    <Link to={'/login'}><button className="login-btn">Log In</button></Link>
                     <span className="vet-login-here"><Link to={''}>Are you a Vet? Login Here</Link></span>
-                </div>
 
-                <div className="login-userimage-wrapper">
-                    <div className="user-image-container">
-                        <img className="user-image"src="/img/userImage.png" alt="user"></img>
-                        <span> Our precious member of Pet24 provides this image. </span>
-                    </div>
+            </div>
+
+            <div className="login-userimage-wrapper">
+                <div className="user-image-container">
+                    <img className="user-image"src="/img/userImage.png" alt="user"></img>
+                    <span> Our precious member of Pet24 provides this image. </span>
                 </div>
-            </LoginStyle>
-        </>
+            </div>
+        </SignInStyle>
     )
-};
+}

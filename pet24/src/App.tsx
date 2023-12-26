@@ -9,6 +9,7 @@ import { About } from './pages/About';
 import { AnimalHospital } from './pages/AnimalHospital';
 import { Login } from './pages/Login';
 import { MainLayout } from './components/mainLayout'
+import { SignIn } from './components/Login/SignIn';
 
 
 
@@ -38,6 +39,7 @@ function App() {
           </Route>
           <Route>
             <Route path='/login' element={<Login/>}></Route>
+            <Route path='/signin' element={<SignIn></SignIn>}></Route>
           </Route>
         </Routes>
       </Parent>

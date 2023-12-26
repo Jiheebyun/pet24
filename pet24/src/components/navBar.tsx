@@ -11,6 +11,7 @@ const NavBarWrapper = styled.div`
     background-color: #FFFFFF;
     display: flex;
     align-items: center;
+    border-bottom: solid 1.5px #E5E5E5;
     .navbar-container{
         min-width: 930px;
         width: 100vw;
