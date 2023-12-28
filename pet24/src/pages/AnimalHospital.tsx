@@ -7,13 +7,14 @@ import { KakaoMap } from "../components/AnimalHospital/KakaoMap";
 
 const HospitalStyle = styled.div`
     width: 100vw;
-    height: 100vh;
+    height: 90%;
     background-color: #ffffff;
     display: flex;
     justify-content: center;
 
     .map-search-wrapper {
         width: 30vw;
+        height: 100%;
         min-width: 400px;
         display: flex;
         flex-direction: column;
@@ -23,20 +24,7 @@ const HospitalStyle = styled.div`
         margin: 0;
         color: #474747;
     }
-    .map-result-warpper{
-        width: 95%;
-        height: 90px;
-        margin-top: 10px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
-        background-color: #ffffff;
-        border: solid 0.5px #E5E5E5;
-        border-radius: 10px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.15), 0 1px 4px rgba(0,0,0,0.23);
-        
-    }
+
     .map-search-lists-container{
         width: 65px;
         height: 65px;
@@ -44,9 +32,11 @@ const HospitalStyle = styled.div`
 
     }
     .map-wrapper{
-        width: 70vw;
-        height: 100vw;
+        width: 100%;
+        height: 100%;
         background-color: #caa2a2;
+        border-left: solid 1px #E5E5E5;
+        overflow: hidden;
     }
     .search-container{
         min-width: 250px;
@@ -104,13 +94,33 @@ const HospitalStyle = styled.div`
             color: #808080;
         }
     }
-    .map-result-list{
+    .map_result_container {
+        width: 100%;
+        height: 100%;
+        overflow-y: scroll;
+
+        .map-result-warpper{
+        width: 95%;
+        height: 90px;
+        margin-top: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        background-color: #ffffff;
+        border: solid 0.5px #E5E5E5;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.15), 0 1px 4px rgba(0,0,0,0.23);  
+
+        }
+        .map-result-list{
         margin: 5px;
         background-color: #ffffff;
-    }
-    .map-detail-container{
+        }
+        .map-detail-container{
         display: flex;
         flex-direction: column;
+        }
     }
 `
 
@@ -148,16 +158,23 @@ export const AnimalHospital = () => {
                         <span className="checkmark">Four</span>
                     </label>
                 </div>
-                <MapResultLists/>
-                <MapResultLists/>
-                <MapResultLists/>
-                <MapResultLists/>
-                <MapResultLists/>
-                <MapResultLists/>
-                <MapResultLists/>
+                <div className="map_result_container">
+                    <MapResultLists/>
+                    <MapResultLists/>
+                    <MapResultLists/>
+                    <MapResultLists/>
+                    <MapResultLists/>
+                    <MapResultLists/>
+                    <MapResultLists/>
+                    <MapResultLists/>
+                    <MapResultLists/>
+                    
+                </div>
             </div>
             <div className="map-wrapper">
-                <KakaoMap></KakaoMap>
+                <div className="map-container">
+                    <KakaoMap></KakaoMap>
+                </div>
             </div>
 
         </HospitalStyle>

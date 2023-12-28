@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 
 
-
 export const MapResultLists = () => {
     
     //map을 사용하여 결과를 보여줘야한다.

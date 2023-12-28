@@ -9,6 +9,7 @@ import styled from "styled-components";
 const BlogListsStyle = styled.div`
     height: 100vh;
     width: 100vw;
+    min-width: 1080px;
     background-color: #e6e6e6;
     h1{
         margin: 0 0 20px 0;
@@ -17,6 +18,7 @@ const BlogListsStyle = styled.div`
     .blog-lists-wrapper{
         width: 100vw;
         height: 100vh;
+        min-width: 1080px;
         background-color: #a04040;
         display: flex;
         justify-content: space-between;
@@ -39,20 +41,17 @@ export const BestBlogLists = () => {
                 <h1> The Best Blogs</h1>
                 <div className="blog-lists-wrapper">
                     <div className="lists-container">
-
                     </div>
-                    <div className="lists-container">
 
+                    <div className="lists-container">
                     </div>
-                    <div className="lists-container">
 
+                    <div className="lists-container">
                     </div>
+
                     <div className="lists-container">
+                    </div>
 
-</div>
-<div className="lists-container">
-
-</div>
                 </div>
         </BlogListsStyle>
     )
