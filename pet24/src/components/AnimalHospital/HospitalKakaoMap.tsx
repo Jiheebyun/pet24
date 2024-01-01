@@ -22,7 +22,8 @@ export const HospitalKakaoMap = () => {
   
 
   useEffect(()=>{
-    getCurrentCoordinate().then(()=>{
+
+    getCurrentCoordinate()
       const container: any = document.getElementById('map');
       console.log(mapState.center.lat)
       console.log(mapState.center.lng)
@@ -35,9 +36,6 @@ export const HospitalKakaoMap = () => {
 
       // keyword 임시 셋팅
       setKeyword('동물병원');
-    })
-    
-
 }, []);
 
 
@@ -56,7 +54,7 @@ const getCurrentCoordinate = async () => {
           const lat = position.coords.latitude; // 위도
           const lon = position.coords.longitude; // 경도
 
-          
+
           const coordinate = new kakao.maps.LatLng(lat, lon);
           res(coordinate);
           setMapState((prev)=> ({
@@ -106,7 +104,7 @@ const getCurrentCoordinate = async () => {
         radius : 3000,
         location: new kakao.maps.LatLng(mapState.center.lat, mapState.center.lng)
       })
-    }, [keyword])
+    }, [keyword,map, mapState])
   
   const handleKeyPress = (e: any) => {
     if (e.key === "Enter") setKeyword(searchInputValue);
