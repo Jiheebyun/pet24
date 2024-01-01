@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { MapResultLists } from "../components/AnimalHospital/MapResultLists";
-import { KakaoMap } from "../components/AnimalHospital/KakaoMap";
+import { HospitalKakaoMap } from "../components/AnimalHospital/HospitalKakaoMap";
 
 
 
@@ -173,7 +173,7 @@ export const AnimalHospital = () => {
             </div>
             <div className="map-wrapper">
                 <div className="map-container">
-                    <KakaoMap></KakaoMap>
+                    <HospitalKakaoMap></HospitalKakaoMap>
                 </div>
             </div>
 
