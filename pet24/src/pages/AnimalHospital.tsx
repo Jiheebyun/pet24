@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { MapResultLists } from "../components/AnimalHospital/MapResultLists";
 import { HospitalKakaoMap } from "../components/AnimalHospital/HospitalKakaoMap";
@@ -125,7 +125,14 @@ const HospitalStyle = styled.div`
 `
 
 
-export const AnimalHospital = () => {
+export const AnimalHospital: React.FC = () => {
+    const [ resultData, setResultData ]: any[] = useState();
+
+    const setResultDataHandler: any = (data: any[]): void =>{
+        setResultData(data);
+    }
+
+
     return (
         <HospitalStyle>
             <div className="map-search-wrapper">
@@ -173,7 +180,9 @@ export const AnimalHospital = () => {
             </div>
             <div className="map-wrapper">
                 <div className="map-container">
-                    <HospitalKakaoMap></HospitalKakaoMap>
+                    <HospitalKakaoMap
+                        setResultDataHandler = {setResultDataHandler}
+                    ></HospitalKakaoMap>
                 </div>
             </div>
 
