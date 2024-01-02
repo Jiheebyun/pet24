@@ -3,8 +3,14 @@ import { Map, MapMarker, CustomOverlayMap } from "react-kakao-maps-sdk";
 import { KakaoMap } from "./KakaoMap";
 
 
-export const HospitalKakaoMap = () => {
-  const { kakao } = window;
+type Props = {
+  setResultDataHandler: (value: number) => void;
+}
+
+
+export const HospitalKakaoMap : React.FC<Props> = ({setResultDataHandler}) => {
+  
+  const { kakao }:any = window;
   const [ mapState, setMapState ] = useState({
     center: {
         lat: 0, 
@@ -13,7 +19,7 @@ export const HospitalKakaoMap = () => {
     errMas: null,
     isLoading: true
 });
-  const [info, setInfo] = useState({content:""})
+  const [info, setInfo]:any = useState({content:""})
   const [markers, setMarkers]: any = useState([])
   const [map, setMap]:any  = useState()
   const [searchInputValue, setSearchInputValue] = useState("");
@@ -41,9 +47,6 @@ export const HospitalKakaoMap = () => {
 
 
 console.log(mapState)
-console.log(map)
-
-
 
 const getCurrentCoordinate = async () => {
     console.log("getCurrentCoordinate 함수 실행!!!");
@@ -53,7 +56,6 @@ const getCurrentCoordinate = async () => {
           console.log(position);
           const lat = position.coords.latitude; // 위도
           const lon = position.coords.longitude; // 경도
-
 
           const coordinate = new kakao.maps.LatLng(lat, lon);
           res(coordinate);
@@ -90,7 +92,11 @@ const getCurrentCoordinate = async () => {
                 lat: data[i].y,
                 lng: data[i].x,
               },
-              content: data[i].place_name,
+              content: {
+                address_name:  data[i].address_name,
+                placeName: data[i].place_name,
+                phone: data[i].phone
+              }
             })
             bounds.extend(new kakao.maps.LatLng(data[i].y, data[i].x))
           }
@@ -99,16 +105,19 @@ const getCurrentCoordinate = async () => {
   
           // 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
           map.setBounds(bounds)
+          setResultDataHandler(data)
         }
       },{
         radius : 3000,
         location: new kakao.maps.LatLng(mapState.center.lat, mapState.center.lng)
       })
-    }, [keyword,map, mapState])
+    }, [keyword, map, mapState])
   
   const handleKeyPress = (e: any) => {
     if (e.key === "Enter") setKeyword(searchInputValue);
   };
+
+
 
   return (
     <Map // 로드뷰를 표시할 Container
@@ -124,14 +133,19 @@ const getCurrentCoordinate = async () => {
       level={3}
       onCreate={setMap}
     >
-      {markers.map((marker: any) => (
+      {markers.map((marker: any, idx: any) => (
         <MapMarker
-          key={`marker-${marker.content}-${marker.position.lat},${marker.position.lng}`}
+          key={`marker-${marker.content.placeName}-${marker.position.lat},${marker.position.lng}`}
           position={marker.position}
           onClick={() => setInfo(marker)}
         >
-          {info &&info.content === marker.content && (
-            <div style={{color:"#000"}}>{marker.content}</div>
+          {info &&info.content.placeName === marker.content.placeName && (
+            <>
+              <h4 style={{color:"#000"}}>{marker.content.placeName}</h4>
+              <span>{` Address: ${marker.content.address_name}`}</span>
+              <span>{` Hours: ${marker.content.phone}`}</span>
+              <span>{` Phone: ${marker.content.phone}`} </span>
+            </>
           )}
         </MapMarker>
       ))}
