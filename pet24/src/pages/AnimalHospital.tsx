@@ -7,7 +7,7 @@ import { HospitalKakaoMap } from "../components/AnimalHospital/HospitalKakaoMap"
 
 const HospitalStyle = styled.div`
     width: 100vw;
-    height: 90%;
+    height: 94%;
     background-color: #ffffff;
     display: flex;
     justify-content: center;
@@ -21,7 +21,7 @@ const HospitalStyle = styled.div`
         align-items: center;
     }
     .map-search-container > h2{
-        margin: 0;
+        margin: 10px 0 0 0;
         color: #474747;
     }
 
@@ -29,6 +29,7 @@ const HospitalStyle = styled.div`
         width: 65px;
         height: 65px;
         background-color: #caa2a2;
+        margin-left: 10px;
 
     }
     .map-wrapper{
@@ -95,8 +96,8 @@ const HospitalStyle = styled.div`
         }
     }
     .map_result_container {
-        width: 100%;
-        height: 100%;
+        width: 90%;
+        height: 90%;
         overflow-y: scroll;
 
         .map-result-warpper{
@@ -110,7 +111,7 @@ const HospitalStyle = styled.div`
         background-color: #ffffff;
         border: solid 0.5px #E5E5E5;
         border-radius: 10px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.15), 0 1px 4px rgba(0,0,0,0.23);  
+        box-shadow: 0 2px 4px rgba(0,0,0,0.15), 0 1px 8px rgba(0,0,0,0.23);  
 
         }
         .map-result-list{
@@ -120,17 +121,20 @@ const HospitalStyle = styled.div`
         .map-detail-container{
         display: flex;
         flex-direction: column;
+        justify-content: flex-start;
         }
     }
 `
 
 
 export const AnimalHospital: React.FC = () => {
-    const [ resultData, setResultData ]: any[] = useState();
+    const [ resultData, setResultData ]: any = useState();
 
     const setResultDataHandler: any = (data: any[]): void =>{
         setResultData(data);
-    }
+    };
+
+
 
 
     return (
@@ -166,16 +170,7 @@ export const AnimalHospital: React.FC = () => {
                     </label>
                 </div>
                 <div className="map_result_container">
-                    <MapResultLists/>
-                    <MapResultLists/>
-                    <MapResultLists/>
-                    <MapResultLists/>
-                    <MapResultLists/>
-                    <MapResultLists/>
-                    <MapResultLists/>
-                    <MapResultLists/>
-                    <MapResultLists/>
-                    
+                    <MapResultLists resultData={resultData}/>                    
                 </div>
             </div>
             <div className="map-wrapper">

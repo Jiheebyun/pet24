@@ -3,25 +3,34 @@ import styled from "styled-components";
 
 
 
-export const MapResultLists = () => {
-    const [ resultData, setResultData ] = useState();
+type Props = {
+    resultData: any;
+  }
+  
 
+export const MapResultLists : React.FC<Props> = ({resultData}) => {
 
+    
     
     
     //map을 사용하여 결과를 보여줘야한다.
     return (
         <>
-            <div className="map-result-warpper">
-                <div className="map-search-lists-container">
-                    <img></img>
+            {resultData && resultData.map((place: any, idx: number)=>{
+                console.log(place)
+                return (
+                    <div className="map-result-warpper">
+                    <div className="map-search-lists-container">
+                        <img src={place.url}></img>
+                    </div>
+                    <div className="map-detail-container">
+                        <span>{place.place_name}</span>
+                        <span>{place.address_name}</span>
+                        <span>{place.phone}</span>
+                    </div>
                 </div>
-                <div className="map-detail-container">
-                    <span>ABC Hospital</span>
-                    <span>Number 10238123</span>
-                </div>
-            </div>
-        
+                )
+            })}
         </>
     )
 }

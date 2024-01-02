@@ -128,7 +128,7 @@ const getCurrentCoordinate = async () => {
       }}
       style={{
         width: "100%",
-        height: "800px",
+        height: "94vh",
       }}
       level={3}
       onCreate={setMap}
