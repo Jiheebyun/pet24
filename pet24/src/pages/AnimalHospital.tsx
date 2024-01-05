@@ -11,7 +11,6 @@ const HospitalStyle = styled.div`
     background-color: #ffffff;
     display: flex;
     justify-content: center;
-
     .map-search-wrapper {
         width: 30vw;
         height: 100%;
@@ -30,7 +29,6 @@ const HospitalStyle = styled.div`
         height: 65px;
         background-color: #caa2a2;
         margin-left: 10px;
-
     }
     .map-wrapper{
         width: 100%;
@@ -122,6 +120,13 @@ const HospitalStyle = styled.div`
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
+        }
+        .map-detail-container > span:nth-child(1) {
+            font-weight: 800;
+        }
+        .map-detail-container > span:nth-last-child(-n+2){
+            font-size:12px;
+            margin-top: 2px;
         }
     }
 `

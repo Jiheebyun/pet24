@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { BestBlogLists } from '../components/Home/BestBlogList';
 
+import { getAPI } from '../utils/getAPI';
+
 //components
 
 
@@ -19,7 +21,8 @@ const HomeWrapper = styled.div`
     .main-img{
         min-width: 1080px;
         width: 100vw;
-        height: 100%;
+        max-width: 100%; 
+        height: auto;
         object-fit: cover;
         object-position: top  ;
     }
@@ -55,6 +58,8 @@ const HomeWrapper = styled.div`
 
 // Home pages
 export const Home = () => {
+    console.log(getAPI())
+
     return (
         <HomeWrapper>
             <div className='main-img-wrapper'>

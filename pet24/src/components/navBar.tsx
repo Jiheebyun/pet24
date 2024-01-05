@@ -56,11 +56,17 @@ const NavBarWrapper = styled.div`
         height: 30px;
         width: 20vw;
         padding: 0;
+        margin: 5px;
         border: none;
         border-radius: 5px;
         background-color: #e2e2e2;
         /* focus outline: 2px solid #2E556A; */
     }
+    
+    .search-container > input:focus {
+        outline:none;
+    }
+
     .search-container > img {
 
     }
@@ -157,10 +163,12 @@ export const NavBar = () => {
 
     return (
         <NavBarWrapper>
-                <div className="title-container">
-                        <img src="/img/logo.png" alt="logo"></img>
-                        <h1>PET24</h1>
-                </div>
+                <Link to="/" style={LinkStyle}>
+                    <div className="title-container">
+                            <img src="/img/logo.png" alt="logo"></img>
+                            <h1>PET24</h1>
+                    </div>
+                </Link>
                 <div className="navbar-container">
                     <div className="search-container">
                         <input placeholder="Search"></input>
