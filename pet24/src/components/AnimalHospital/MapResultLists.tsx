@@ -19,12 +19,12 @@ export const MapResultLists : React.FC<Props> = ({resultData}) => {
             {resultData && resultData.map((place: any, idx: number)=>{
                 console.log(place)
                 return (
-                    <div className="map-result-warpper">
+                <div key={place.id} className="map-result-warpper">
                     <div className="map-search-lists-container">
-                        <img src={place.url}></img>
+                            <img src={place.url}></img>
                     </div>
                     <div className="map-detail-container">
-                        <span>{place.place_name}</span>
+                        <span className="place-name">{place.place_name}</span>
                         <span>{place.address_name}</span>
                         <span>{place.phone}</span>
                     </div>
