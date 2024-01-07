@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import styled from 'styled-components';
 import { BestBlogLists } from '../components/Home/BestBlogList';
 
-import { getAPI } from '../utils/getAPI';
+
 
 //components
 
@@ -58,7 +59,34 @@ const HomeWrapper = styled.div`
 
 // Home pages
 export const Home = () => {
-    console.log(getAPI())
+    const [ blogsData, setBlogsData ] = useState([])
+
+    useEffect(()=>{
+        const promise = fetchBlogsListAPI();
+        const getData = () => {
+            promise.then((appData: any) => {
+            setBlogsData(appData)
+            });
+        };
+        getData();
+    },[]);
+
+    const fetchBlogsListAPI = async () =>{
+        const apiKey = '3a9cbf1cdba94e3b81e06ad290482d8e';
+        // const endpoint = 'https://newsapi.org/v2/everything';
+        const endpoint = '';
+  
+        // API 요청에 필요한 매개변수 설정
+        const params = {
+          q: 'dog',
+          apiKey: apiKey,
+        };
+        // axios를 사용하여 API 요청 보내기
+        const response = await axios.get(endpoint, { params });
+        return response.data.articles
+    };
+
+    console.log(blogsData)
 
     return (
         <HomeWrapper>
@@ -68,7 +96,9 @@ export const Home = () => {
                 <img className="main-img" src='img/main.png' alt='main'></img>
             </div>
             <div className='main-lists-wrapper'>
-                <BestBlogLists></BestBlogLists>
+                <BestBlogLists
+                    blogsData = { blogsData }
+                />
             </div>
         </HomeWrapper>
     )

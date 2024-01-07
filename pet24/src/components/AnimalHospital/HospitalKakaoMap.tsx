@@ -28,7 +28,6 @@ export const HospitalKakaoMap : React.FC<Props> = ({setResultDataHandler}) => {
   
 
   useEffect(()=>{
-
     getCurrentCoordinate()
       const container: any = document.getElementById('map');
       console.log(mapState.center.lat)
