@@ -20,7 +20,7 @@ const Parent = styled.div`
   max-width: 100vw;
   width: 100vw;
   height: 100vh;
-  background-color: #d8d8d8;
+  /* background-color: #d8d8d8; */
 `
 
 

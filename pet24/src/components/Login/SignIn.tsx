@@ -155,7 +155,7 @@ const SignInStyle = styled.div`
 
 
     .signin-btn{
-        height: 40px;
+        min-height: 40px;
         width: 31vw;
         min-width: 355px;
         max-width: 470px;

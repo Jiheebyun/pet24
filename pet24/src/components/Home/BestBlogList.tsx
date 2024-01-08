@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 
 
@@ -10,41 +11,68 @@ const BlogListsStyle = styled.div`
     height: 100vh;
     width: 100vw;
     min-width: 1080px;
-    background-color: #e6e6e6;
     h1{
-        margin: 20px 0 20px 0;
-        color: #6d6d6d;
+        margin: 20px 0 15px 0;
     }
     .blog-lists-wrapper{
         width: 100vw;
         min-width: 1080px;
-        background-color: #a04040;
         display: flex;
         justify-content: space-between;
     }
     .lists-container {
         margin: 15px;
-        min-width: 350px;
-        width: 400px;
+        margin-left: 30px;
+        margin-right: 30px;
+        min-width: 300px;
+        width: 350px;
         height: 450px;
-        background-color: #e6e6e6;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+        background-color: #f3f3f3;
         img {
-            min-width: 350px;
+            min-width: 300px;
             width: 100%;
             height: 350px;
             object-fit: cover;
         }
         h4{
+            padding: 5px;
             margin: 0;
+            margin-bottom: 10px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-size: 17px;
+            font-weight: 1000;
+            text-align: center;
         }
         p{
             margin: 0;
+            padding: 3px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            word-wrap: break-word;
+            -webkit-line-clamp: 2 ;
+            -webkit-box-orient: vertical;
+        }
+        button{
+            border: none;
+            outline: none;
+            background-color: inherit ;
+            cursor: pointer;
         }
     }
 
 
 `
 
+const LinkStyle: any ={
+    textAlign: "center",
+    textDecoration: "none", 
+    color: "inherit"
+}
 
 const data = [
     {
@@ -91,6 +119,9 @@ type Props = {
 }
 
 export const BestBlogLists  : React.FC<Props> = ({blogsData}) => {
+
+
+
     return (
         <BlogListsStyle>
                 <h1> Articles</h1>
@@ -98,9 +129,10 @@ export const BestBlogLists  : React.FC<Props> = ({blogsData}) => {
                     {data.map((list, idx)=>{
                         return (
                             <div key ={idx} className="lists-container">
-                                <img src={list.urlToImage}></img>
-                                <h4>{list.title}</h4>
-                                <p>{list.content}</p>
+                                <Link to={""} style={LinkStyle}><img src={list.urlToImage}></img></Link>
+                                <Link to={""} style={LinkStyle}><h4>{list.title}</h4></Link>
+                                <Link to={""} style={LinkStyle}><p>{list.content}</p></Link>
+                                <button>view more</button>
                             </div>
                         )
                     })}
