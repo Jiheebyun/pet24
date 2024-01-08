@@ -21,8 +21,8 @@ const BlogMainStyle = styled.div`
             object-position: top  ;
         }
         .blog-main-content-wrapper{
-            min-width: 650px;
-            max-width: 550px;
+            min-width: 850px;
+            max-width: 850px;
             height: 300px;
             max-height: 300px;
             background-color: #96adb9;
@@ -48,14 +48,14 @@ const BlogMainStyle = styled.div`
                 justify-content: center;
             }
             .main-content-img-container{
-                width: 500px;
+                width: 700px;
                 margin: 20px;
                 min-height: 260px;
                 max-width: 300px;
                 background-color: #ffffff;
             }
             .main-content-container{
-                width: 500px;
+                width: 700px;
                 margin: 20px;
                 min-height: 260px;
                 max-width: 300px;

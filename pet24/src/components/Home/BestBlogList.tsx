@@ -29,12 +29,14 @@ const BlogListsStyle = styled.div`
         height: 450px;
         box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
         transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-        background-color: #f3f3f3;
+        background-color: #fdfdfd;
+        border-radius: 10px;
         img {
             min-width: 300px;
             width: 100%;
             height: 350px;
             object-fit: cover;
+            border-radius: 10px;
         }
         h4{
             padding: 5px;
