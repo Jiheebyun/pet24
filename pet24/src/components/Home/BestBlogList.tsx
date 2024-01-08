@@ -38,33 +38,38 @@ const BlogListsStyle = styled.div`
             object-fit: cover;
             border-radius: 10px;
         }
-        h4{
-            padding: 5px;
-            margin: 0;
-            margin-bottom: 10px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            font-size: 17px;
-            font-weight: 1000;
-            text-align: center;
+        .lists-content-container{
+            width: 100%;
+            h4{
+                padding: 5px;
+                margin: 0;
+                margin-bottom: 10px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                font-size: 17px;
+                font-weight: 800;
+                text-align: center;
+            }
+            p{
+                margin: 0;
+                padding: 3px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                word-wrap: break-word;
+                -webkit-line-clamp: 2 ;
+                -webkit-box-orient: vertical;
+            }
+            button{
+                border: none;
+                outline: none;
+                background-color: inherit ;
+                cursor: pointer;
+            }
         }
-        p{
-            margin: 0;
-            padding: 3px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            word-wrap: break-word;
-            -webkit-line-clamp: 2 ;
-            -webkit-box-orient: vertical;
-        }
-        button{
-            border: none;
-            outline: none;
-            background-color: inherit ;
-            cursor: pointer;
-        }
+
+        
     }
 
 
@@ -132,9 +137,12 @@ export const BestBlogLists  : React.FC<Props> = ({blogsData}) => {
                         return (
                             <div key ={idx} className="lists-container">
                                 <Link to={""} style={LinkStyle}><img src={list.urlToImage}></img></Link>
-                                <Link to={""} style={LinkStyle}><h4>{list.title}</h4></Link>
-                                <Link to={""} style={LinkStyle}><p>{list.content}</p></Link>
-                                <button>view more</button>
+                                <div className="lists-content-container">
+                                    <Link to={""} style={LinkStyle}><h4>{list.title}</h4></Link>
+                                    <Link to={""} style={LinkStyle}><p>{list.content}</p></Link>
+                                    <button>view more</button>
+                                </div>
+
                             </div>
                         )
                     })}
