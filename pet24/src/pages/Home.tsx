@@ -10,7 +10,7 @@ import { BestBlogLists } from '../components/Home/BestBlogList';
 
 const HomeWrapper = styled.div`
     width: 100vw;
-    height: 2000px;
+    height: auto;
     .main-img-wrapper{
         min-width: 1080px;
         width: 100vw;
@@ -49,6 +49,9 @@ const HomeWrapper = styled.div`
         &:hover{
             background-color: #7399ac;
         }
+    }
+    .main-lists-wrapper{
+        height: 100%;
     }
     
 

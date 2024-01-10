@@ -68,8 +68,6 @@ const BlogMainStyle = styled.div`
 `
 
 
-
-
 export const BlogMain = ()=>{
 
     return (
