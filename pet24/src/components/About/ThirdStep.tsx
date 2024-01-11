@@ -1,9 +1,18 @@
-import React from "react";
-import styled from "styled-components";
+import React, { useEffect, useRef, useState } from "react";
+import styled, { keyframes } from "styled-components";
 
 
 
 
+
+const move = keyframes`
+    from{
+        left: -800px;
+    }
+    to{
+        left: 6%;
+    }
+`;
 
 const ThirdStepStyle = styled.div`
     .steps-wrapper{
@@ -31,9 +40,28 @@ const ThirdStepStyle = styled.div`
             top:0;
             left: 10px;
         }
-        .content-container{
+    }
+    .step-img-container{
+        width: 40%;
+        height: 760px;
+        min-width: 410px;
+    }
+    .firstImg > img{
+        min-width: 400px;
+        width: 100%;
+        height: 760px;
+        object-fit: cover;
+        text-align: unset;
+    }
+`;
+
+
+const ConstantContainer: any = styled.div<AnimationProps>`
             width: 630px;
             height: 430px;
+            animation: ${(props)=> props.$isAnimation ? move :null} 2s;
+            visibility: ${(props)=> props.$isAnimation ? '' : 'hidden'};
+            position: absolute;
             .content-line-container{
                 height: 40px;
                 width: 50vw;
@@ -62,7 +90,6 @@ const ThirdStepStyle = styled.div`
                 }
             }
             .content-getstarted{
-
             }
             h1{
                 font-size: 50px;
@@ -71,26 +98,31 @@ const ThirdStepStyle = styled.div`
             .content-span{
                 font-size: 25px;
             }
-        }
-    }
-    
-    .step-img-container{
-        width: 40%;
-        height: 760px;
+`
 
-    }
-    .firstImg > img{
-        min-width: 400px;
-        width: 100%;
-        height: 760px;
-        object-fit: cover;
-        text-align: unset;
-    }
-`;
+
+interface AnimationProps {
+    $isAnimation?: boolean
+};
+
+
 
 
 export const ThirdStep = () => {
 
+    const target: any = useRef(null);
+    const [ isAnimation, setIsAnimation ]:any = useState(false);
+
+    useEffect(() => {
+        window.addEventListener('scroll', scrollEvent);
+        return () => window.removeEventListener('scroll', scrollEvent);
+    }, []);
+
+    const scrollEvent = () => {
+        if(window.scrollY > 850 ){
+            setIsAnimation(true);
+        }
+    };
 
     return (
         <>
@@ -98,7 +130,11 @@ export const ThirdStep = () => {
                 <div className="steps-wrapper">
                     <section className="step-content-container">
                         <span className="content-number">03 </span>
-                        <div className="content-container">
+                        <ConstantContainer 
+                            ref = {target} 
+                            className="content-container"
+                            $isAnimation ={isAnimation}
+                        >
                             <div className="content-line-container">
                                 <span className="line"> Next-Step</span>
                             </div>
@@ -111,7 +147,7 @@ export const ThirdStep = () => {
                                 further filters to the search criteria. The click on Search 
                                 organisation to display the matches.</span>
                             <span> Read more.. </span>
-                        </div>
+                        </ConstantContainer>
 
                     </section>
                     <div className="step-img-container">

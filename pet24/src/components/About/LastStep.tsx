@@ -1,11 +1,20 @@
-import React from "react";
-import styled from "styled-components";
+import React, { useState, useRef, useEffect } from "react";
+import styled,{ keyframes } from "styled-components";
 
 
 
+
+const move = keyframes`
+    from{
+        right: -800px;
+    }
+    to{
+        right: 6%;
+    }
+`;
 
 const LastStepStyle = styled.div`
-        .steps-wrapper{
+    .steps-wrapper{
         width: 100%;
         display: flex;
         flex-direction: row;
@@ -30,9 +39,28 @@ const LastStepStyle = styled.div`
             top:0;
             left: 10px;
         }
-        .content-container{
+    }
+    .step-img-container{
+        width: 40%;
+        height: 760px;
+        min-width: 410px;
+    }
+    .firstImg > img{
+        min-width: 400px;
+        width: 100%;
+        height: 760px;
+        object-fit: cover;
+        text-align: unset;
+    }
+`;
+
+
+const ConstantContainer: any = styled.div<AnimationProps>`
             width: 630px;
             height: 430px;
+            animation: ${(props)=> props.$isAnimation ? move :null} 2s;
+            visibility: ${(props)=> props.$isAnimation ? '' : 'hidden'};
+            position: absolute;
             .content-line-container{
                 height: 40px;
                 width: 50vw;
@@ -61,7 +89,6 @@ const LastStepStyle = styled.div`
                 }
             }
             .content-getstarted{
-
             }
             h1{
                 font-size: 50px;
@@ -70,30 +97,31 @@ const LastStepStyle = styled.div`
             .content-span{
                 font-size: 25px;
             }
-        }
-    }
-    
-    .step-img-container{
-        width: 40%;
-        height: 760px;
-
-    }
-    .firstImg > img{
-        min-width: 400px;
-        width: 100%;
-        height: 760px;
-        object-fit: cover;
-        text-align: unset;
-    }
+`
 
 
-`;
-
+interface AnimationProps {
+    $isAnimation?: boolean
+};
 
 
 
 
 export const LastStep = () =>{
+
+    const target: any = useRef(null);
+    const [ isAnimation, setIsAnimation ]:any = useState(false);
+
+    useEffect(() => {
+        window.addEventListener('scroll', scrollEvent);
+        return () => window.removeEventListener('scroll', scrollEvent);
+    }, []);
+
+    const scrollEvent = () => {
+        if(window.scrollY > 1550){
+            setIsAnimation(true);
+        }
+    };
 
     return (
         <>
@@ -106,7 +134,12 @@ export const LastStep = () =>{
                     </div>
                     <section className="step-content-container">
                         <span className="content-number">04 </span>
-                        <div className="content-container">
+
+                        <ConstantContainer 
+                            ref = {target} 
+                            className="content-container"
+                            $isAnimation ={isAnimation}
+                        >
                             <div className="content-line-container">
                                 <span className="line"> Next-Step</span>
                             </div>
@@ -119,7 +152,7 @@ export const LastStep = () =>{
                                 further filters to the search criteria. The click on Search 
                                 organisation to display the matches.</span>
                             <span> Read more.. </span>
-                        </div>
+                        </ConstantContainer>
 
                     </section>
 
