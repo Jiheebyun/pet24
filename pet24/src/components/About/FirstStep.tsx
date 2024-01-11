@@ -1,7 +1,19 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 
+
+
+
+const move = keyframes`
+    from{
+        left: -800px;
+    }
+    to{
+        left: 6%;
+    }
+
+`;
 
 const FirstStepStyle = styled.div`
     .steps-wrapper{
@@ -32,6 +44,8 @@ const FirstStepStyle = styled.div`
         .content-container{
             width: 630px;
             height: 430px;
+            animation: ${move} 2s;
+            position: absolute;
             .content-line-container{
                 height: 40px;
                 width: 50vw;
@@ -85,7 +99,6 @@ const FirstStepStyle = styled.div`
         text-align: unset;
     }
 `;
-
 
 
 export const FirstStep = () =>{
