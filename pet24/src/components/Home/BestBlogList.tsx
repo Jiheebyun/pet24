@@ -29,20 +29,20 @@ const BlogListsStyle = styled.div`
         display: flex;
         flex-direction: column;
         width: 100%;
-        height: 450px;
-        max-width: 320px;
+        height: 320px;
+        max-width: 250px;
         box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
         transition: all 0.3s cubic-bezier(.25,.8,.25,1);
         border-radius: 20px; 
     }
     .list-img-container{ // 이미지 컨텐트 박스 
-        height: 300px;
+        height: 180px;
         border-radius: 20px 20px 0 0;
 
         img {
-            min-width: 200px;
+            min-width: 120px;
             width: 100%;
-            height: 300px;
+            height: 160px;
             object-fit: cover;
             border-radius: 20px 20px 0 0;
             }
@@ -56,24 +56,62 @@ const BlogListsStyle = styled.div`
         justify-content: center;
         align-items: center;
    
-        h3{
+        h4{
          margin: 5px;
-         font-weight: 800;
+         font-weight: 700;
+         width: 220px;
         }
         span{
+            margin: 5px 10px 5 10px;
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
-            width: 250px;
+            width: 220px;
             height: 20px;
+            color: #7A7A84;
+            font-size: 12px;
+            font-weight: 500;
         }
         button{
             border: none;
             outline: none;
             background-color: inherit ;
+            color: #7A7A84;
             cursor: pointer;
         }
     }
+
+    .content-icon-container{
+        margin: 15px 0px 0px 0px;
+        width: 100%;
+        height: 30px;
+        display: flex;
+        justify-content: space-around;
+        .content-date-container{
+            display: flex;
+
+        }
+        .content-date-img{
+            width: 15px;
+            height: 15px;
+        }
+        .content-date{
+            width: 80px;
+            margin: 0px 5px 0px 5px;
+        }
+        .source-container{
+            display: flex;
+        }
+        .source-from-img{
+            width: 15px;
+            height: 15px;
+        }
+        .source-from{
+            width: 80px;
+            margin: 0px 5px 0px 5px;
+        }
+    }
+
 `
 
 const LinkStyle: any ={
@@ -218,9 +256,21 @@ export const BestBlogLists  : React.FC<Props> = ({blogsData}) => {
                                     <Link to={""} style={LinkStyle}><img src={list.urlToImage}></img></Link>
                                 </div>
                                 <div className="content-container">
-                                    <Link to={""} style={LinkStyle}><h3>{list.title}</h3></Link>
+                                    <Link to={""} style={LinkStyle}><h4>{list.title}</h4></Link>
                                     <span>{list.content}</span>
                                     <button>view more</button>
+                                    <div className="content-icon-container">
+                                        <div className="content-date-container">
+                                            <img src="/img/date_icon.png" alt="content-date" className="content-date-img"></img>
+                                            <span className="content-date">2024-01-20</span>
+                                        </div>
+                                        <div className="source-container">
+                                            <img src="/img/person_icon.png" alt="source-from" className="source-from-img"></img>
+                                            <span className="source-from">BBC News</span>
+
+                                        </div>
+
+                                    </div>
                                 </div>
                             </li>
                         )
