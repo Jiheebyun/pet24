@@ -45,21 +45,14 @@ const NavBarWrapper = styled.div`
         width: 350px;
         position: relative;
         height: 45px;
-        display: flex;
-        justify-content:center;
-        align-items: center;
+        margin-left: 20px;
     }
     .search-container > input {
-        position: absolute;
-        min-width: 220px;
-        max-width: 300px;
-        height: 30px;
-        width: 20vw;
-        padding: 0;
-        margin: 5px;
-        border: none;
-        border-radius: 5px;
-        background-color: #e2e2e2;
+        width: 100%;
+        border: 1px solid #bbb;
+        border-radius: 8px;
+        padding: 10px 12px;
+        font-size: 14px;
         /* focus outline: 2px solid #2E556A; */
     }
     
@@ -68,7 +61,11 @@ const NavBarWrapper = styled.div`
     }
 
     .search-container > img {
-
+        position : absolute;
+        width: 17px;
+        top: 10px;
+        right: 0px;
+        margin: 0;
     }
     .search-btn {
         position: absolute;
@@ -171,9 +168,8 @@ export const NavBar = () => {
                 </Link>
                 <div className="navbar-container">
                     <div className="search-container">
-                        <input placeholder="Search"></input>
-                        <img src="" alt="search-icon"></img>
-                        <button className="search-btn">검색</button>
+                        <input placeholder="Search Hospital"></input>
+                            <img src="/img/search_icon.png" alt="search-icon"></img>
                     </div>
                     <div className="manu-container">
                         <ul>

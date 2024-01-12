@@ -43,24 +43,26 @@ const HospitalStyle = styled.div`
         width: 350px;
         position: relative;
         height: 45px;
-        display: flex;
-        justify-content:center;
-        align-items: center;
+        margin: 20px 20px 5px 0;
     }
     .search-container > input {
-        position: absolute;
         min-width: 260px;
         max-width: 300px;
-        height: 30px;
-        width: 20vw;
         padding: 0;
-        border: none;
-        border-radius: 5px;
-        background-color: #e2e2e2;
+        border: none;     
+        width: 100%;
+        border: 1px solid #bbb;
+        border-radius: 8px;
+        padding: 10px 12px;
+        font-size: 14px;
         /* focus outline: 2px solid #2E556A; */
     }
     .search-container > img {
-
+        position : absolute;
+        width: 17px;
+        top: 10px;
+        right: 8%;
+        margin: 0;
     }
     .search-btn {
         position: absolute;
@@ -139,9 +141,6 @@ export const AnimalHospital: React.FC = () => {
         setResultData(data);
     };
 
-
-
-
     return (
         <HospitalStyle>
             <div className="map-search-wrapper">
@@ -149,8 +148,7 @@ export const AnimalHospital: React.FC = () => {
                     <h2>Animal Hospital</h2>
                     <div className="search-container">
                         <input placeholder="Search"></input>
-                        <img src="" alt="search-icon"></img>
-                        <button className="search-btn">검색</button>
+                        <img src="/img/search_icon.png" alt="search-icon"></img>
                     </div>
                 </div>
                 <div className="map-search-option-container">
