@@ -24,6 +24,7 @@ const BlogListsStyle = styled.div`
         grid-template-columns: 1fr 1fr 1fr 1fr;
         gap: 40px;
         margin-left: -80px;
+        margin-bottom: 50px;
     }
     .list-content-container{
         display: flex;

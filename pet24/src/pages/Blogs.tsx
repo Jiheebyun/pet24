@@ -18,6 +18,7 @@ export const Blogs = () => {
             <BlogMain></BlogMain>
             {/* <h1>This is a blog pages</h1> */}
             <BlogLists></BlogLists>
+
         </BlogStyle>
     )
 };

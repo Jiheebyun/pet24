@@ -7,18 +7,17 @@ import styled from "styled-components";
 
 const BlogMainStyle = styled.div`
     width: 100vw;
-    height: 76vh;
+    margin-bottom: 250px;
     .blog-img-wrapper{
         width: 100vw;
         height: 500px;
-
         position: relative;
         img{
             width: 100vw;
             height: 500px;
             border-radius: 0px 0px 150px 150px;
             object-fit: cover;
-            object-position: top  ;
+            object-position: top;
         }
         .blog-main-content-wrapper{
             min-width: 850px;
