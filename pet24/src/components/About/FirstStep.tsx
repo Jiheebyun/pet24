@@ -73,9 +73,6 @@ const FirstStepStyle = styled.div`
                     line-height:  0px;
                 }
             }
-            .content-getstarted{
-
-            }
             h1{
                 font-size: 50px;
                 margin: 5px 5px 20px 5px;

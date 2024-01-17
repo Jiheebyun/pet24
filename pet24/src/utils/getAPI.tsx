@@ -18,7 +18,6 @@ import axios from 'axios';
 //           q: 'dog',
 //           apiKey: apiKey,
 //         };
-        
 //         // axios를 사용하여 API 요청 보내기
 //         const response = await axios.get(endpoint, { params });
 //         return response.data.articles
@@ -34,7 +33,6 @@ import axios from 'axios';
 //           // .catch((error: any) => {
 //           //   console.error('API 요청 중 오류 발생:', error.message);
 //           // });
-
 
 //     } catch( error ){
 //         console.log(error);
