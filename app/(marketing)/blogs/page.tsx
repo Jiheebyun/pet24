@@ -2,6 +2,7 @@
 
 import BlogsMain from "../../components/blogs/blogsMain";
 import classes from "./blogs.module.css";
+import BlogLists from "@/app/components/blogList";
 
 
 export default function Blogs (){
@@ -10,7 +11,15 @@ export default function Blogs (){
         <>
             <div className={classes.blogWrapper}>
                 <BlogsMain></BlogsMain>
+
+
+
+                <h1 className={classes.articleContainerTitle}>Blog Lists</h1>
+                <div>
+                    <BlogLists></BlogLists>
+                </div>
             </div>
+
         
         </>
     )

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import '../globals.css';
-import NavBar from '../components/navBar';
-import Footer from '../components/footer';
+import NavBar from '../components/common/navBar';
+import Footer from '../components/common/footer';
 import Script from 'next/script';
 
 

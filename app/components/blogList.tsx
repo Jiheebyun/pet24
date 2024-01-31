@@ -1,4 +1,6 @@
 "use client"
+import React, { useState, useEffect } from "react";
+
 import Link from "next/link";
 import Image from "next/image";
 import classes from "./blogList.module.css";
@@ -123,11 +125,21 @@ const data = [
 ]
 
 
-export default function BlogLists (){
+export default function BlogLists (){ 
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    // 부드러운 효과를 위해 초기에 'loaded' 상태를 true로 변경
+    setTimeout(() => {
+      setLoaded(true);
+    }, 0);
+  }, []);
+
+
     return (
         <>
           <div className={classes.blogListsStyle}>
-              <ul className={classes.blogListsWrapper}>
+              <ul className={loaded ? classes.blogListsWrapperLoadedTrue: classes.blogListsWrapperLoadedFalse}>
                 {data.map((list, idx)=>{
                     return (
                       <li key={idx} className={classes.listContentContainer}>
@@ -137,7 +149,7 @@ export default function BlogLists (){
                                   src={list.urlToImage} 
                                   alt="list-imgae"
                                   objectFit="cover"
-                                  width={240}
+                                  width={250}
                                   height={160}
                                   
                                 ></Image>
@@ -178,7 +190,7 @@ export default function BlogLists (){
                       </li>
                         )
                     })}
-                </ul>
+              </ul>
           </div>
         
         </>

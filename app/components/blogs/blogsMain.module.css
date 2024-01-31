@@ -54,13 +54,47 @@
     margin: 20px;
     min-height: 260px;
     max-width: 300px;
+    border-radius: 20px;
     background-color: #ffffff;
 }
+.bestListImgContainer{
+    width: 300px;
+    height: 260px;
+    border-radius: 20px;
+    background-color: #021925;
+    overflow: hidden;
+}
+
 .mainContentContainer{
     width: 700px;
     margin: 20px;
     min-height: 260px;
     max-width: 300px;
-    background-color: #b4b8b9;
+    border-radius: 20px;
+    background-color: #ffffff;
     opacity: 0.6;
+}
+.articleContainer{
+    text-align: left;
+    padding: 20px;
+}
+.articleTitleH2Container {
+    width: 260px;
+    height: 32.5px;
+    margin-bottom: 10px;
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.articleContentSpanContainer{
+    width: 260px;
+    height: 110px;
+    margin-bottom: 10px;
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
