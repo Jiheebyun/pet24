@@ -54,7 +54,7 @@ export default function AnimalHospitals(){
                     </div>
                 </div>
                 <div className={classes.mapWrapper}>
-                    <div className="map-container">
+                    <div className="map-container" style={{ width: "100%", height: "100%" }}>
                         <HospitalsKakaoMap
                             setResultDataHandler = {setResultDataHandler}
                             setIsLoading = {setIsLoading}

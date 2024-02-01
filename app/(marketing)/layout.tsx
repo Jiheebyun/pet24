@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import '../globals.css';
 import NavBar from '../components/common/navBar';
 import Footer from '../components/common/footer';
-import Script from 'next/script';
+
 
 
 
@@ -21,7 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <body >
         <NavBar></NavBar>
-        {children}
+          {children}
         <Footer></Footer>
       </body>
     </html>
