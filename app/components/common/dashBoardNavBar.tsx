@@ -21,8 +21,18 @@ export default function DashBoardNavBar() {
                         </Image>
                 </div>
 
-
-                <div className={classes.navBarManuWrapper}>
+                {/* 왜 모듈로 css스타일을 넣으면 안들어갈까...? 왜인라인으로 넣어야 스타일이들어가니 */}
+                <div className={classes.navBarManuWrapper1} 
+                    style={{
+                        width: "100px",
+                        height: "500px",
+                        backgroundColor: "#FFC297",
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "space-between",
+                        alignItems: "center"
+                    }}
+                >
                     <div className={classes.navBarManuContainer}>
                         <Link href={'/'}>
                             <Image 

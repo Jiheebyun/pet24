@@ -1,31 +1,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* .dashboardNavBarWrapper{
+.dashboardNavBarWrapper{
     width: 100px;
     height: 89vh;
     min-height: 500px;
@@ -59,18 +35,21 @@
     background-color: #9c806c
 };
 
-.navBarManuWrapper{
-    margin: 20px;
-
+.navBarManuWrapper1{
+    width: 100px;
+    height: 500px;
+    background-color: #FFC297;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 };
 
 .navBarManuContainer{
     width: 100px;
+    height: 40px;
     margin-bottom: 20px;
     background-color: #FFC297;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
 
 };
 
@@ -80,4 +59,4 @@
     display: flex;
     justify-content: center;
     align-items: flex-end;
-}; */
+};

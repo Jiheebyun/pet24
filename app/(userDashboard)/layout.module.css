@@ -2,15 +2,9 @@
 
 
 
-
-
-
-/* .dashboardWrapper{
-    min-width: 1080px;
+.dashboardWrapper{
     display: flex;
-    flex-direction: column;
-    background-color: #fdfdfd
-};
+}
 
 .dashboardNavBarWrapper{
     width: 100px;
@@ -18,12 +12,12 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-};
+}
 
 .dashboardContentWrapper{
-    width: 800px;
+    width: 100vw;
+    min-width: 1080px;
     height: 100%;
     background-color: #7a441d;
-    margin-left: 10px;
-};
- */
+}
+
