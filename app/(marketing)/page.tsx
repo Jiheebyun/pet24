@@ -5,7 +5,7 @@ import styles from './page.module.css'
 
 
 import classes from './page.module.css';
-import BlogLists from '../components/blogList';
+import BlogLists from '../components/common/blogList';
 
 
 export default function Home() {

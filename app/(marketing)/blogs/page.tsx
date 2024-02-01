@@ -2,7 +2,7 @@
 
 import BlogsMain from "../../components/blogs/blogsMain";
 import classes from "./blogs.module.css";
-import BlogLists from "@/app/components/blogList";
+import BlogLists from "@/app/components/common/blogList";
 
 
 export default function Blogs (){
