@@ -22,7 +22,7 @@ export default function DashBoardNavBar() {
                 </div>
 
                 {/* 왜 모듈로 css스타일을 넣으면 안들어갈까...? 왜인라인으로 넣어야 스타일이들어가니 */}
-                <div className={classes.navBarManuWrapper1} 
+                <div className={classes.navBarmenuWrapper1} 
                     style={{
                         width: "100px",
                         height: "500px",
@@ -33,7 +33,7 @@ export default function DashBoardNavBar() {
                         alignItems: "center"
                     }}
                 >
-                    <div className={classes.navBarManuContainer}>
+                    <div className={classes.navBarmenuContainer}>
                         <Link href={'/'}>
                             <Image 
                                 src="/img/dashBoardNavBarIcons/dashBoardNavBarHome.png" 
@@ -43,7 +43,7 @@ export default function DashBoardNavBar() {
                             ></Image>
                         </Link>
                     </div>
-                    <div className={classes.navBarManuContainer}>
+                    <div className={classes.navBarmenuContainer}>
                         <Link href={'/'}>
                             <Image 
                                 src="/img/dashBoardNavBarIcons/dashBoardNavBarNotifications.png" 
@@ -53,7 +53,7 @@ export default function DashBoardNavBar() {
                             ></Image>
                         </Link>
                     </div>
-                    <div className={classes.navBarManuContainer}>
+                    <div className={classes.navBarmenuContainer}>
                         <Link href={'/'}>
                             <Image 
                                 src="/img/dashBoardNavBarIcons/dashBoardNavBarCalendar.png" 
@@ -63,7 +63,7 @@ export default function DashBoardNavBar() {
                             ></Image>
                         </Link>
                     </div>
-                    <div className={classes.navBarManuContainer}>
+                    <div className={classes.navBarmenuContainer}>
                         <Link href={'/'}>
                             <Image 
                                 src="/img/dashBoardNavBarIcons/dashBoardNavBarVector.png" 
@@ -73,7 +73,7 @@ export default function DashBoardNavBar() {
                             ></Image>
                         </Link>
                     </div>
-                    <div className={classes.navBarManuContainer}>
+                    <div className={classes.navBarmenuContainer}>
                         <Link href={'/'}>
                             <Image 
                                 src="/img/dashBoardNavBarIcons/dashBoardNavBarPerson.png" 
