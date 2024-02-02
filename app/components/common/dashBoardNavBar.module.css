@@ -11,29 +11,26 @@
     justify-content: space-around;
     align-items: center;
     border-radius: 0px 20px 20px 0px;
-};
+}
 
 .dashboardContentWrapper{
-    background-color: #7a441d;
-};
+    background-color: #FFC297;
+}
 
 .navBarContainer{
     width: 100px;
-    height: 100vh;
     background-color: #FFC297;
-};
+}
 
 .logoNavBarImgContainer{
-    padding: 30px;
     background-color: #FFC297;
-    
-};
+}
 
 .logoImg{
     width: 100px;
     height: 80px;
-    background-color: #9c806c
-};
+    background-color: #FFC297;
+}
 
 .navBarManuWrapper1{
     width: 100px;
@@ -43,15 +40,17 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-};
+}
 
 .navBarManuContainer{
     width: 100px;
     height: 40px;
     margin-bottom: 20px;
     background-color: #FFC297;
-
-};
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .settingConatiner{
     width: 100px;
@@ -59,4 +58,4 @@
     display: flex;
     justify-content: center;
     align-items: flex-end;
-};
+}
