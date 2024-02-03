@@ -1,0 +1,40 @@
+
+
+
+
+.petStatusInfoWrapper {
+
+}
+.petStatusInfoWrapper{
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+}
+.petStatusInfoTitleContainer{
+    height: 30px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.petStatusInfoTitleH2{
+    margin-left: 10px;
+}
+.petStatusInfoTitleH2Span{
+    margin-left: 10px;
+}
+.petStatusInfoContainer{
+    height: 250px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-left: 10px;
+}
+.petStatusInfoDetailContainer{
+    width: 215px;
+    height: 200px;
+    border-radius: 20px;
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    margin-right: 60px;
+    box-shadow: 0 0 20px #548EAD;
+}

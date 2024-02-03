@@ -4,7 +4,7 @@ import '../globals.css';
 import NavBar from '../components/common/navBar';
 import Footer from '../components/common/footer';
 import classes from './layout.module.css'
-import DashBoardNavBar from '../components/common/dashBoardNavBar';
+import DashBoardNavBar from '../components/dashBoard/dashBoardNavBar';
 
 
 export const metadata: Metadata = {
@@ -22,8 +22,6 @@ export default function DashBoardLayout({
         <html>
             <body>
                 <NavBar></NavBar>
-
-
                 <div className={classes.dashboardWrapper}>
                   <div>
                     <DashBoardNavBar></DashBoardNavBar>
