@@ -1,0 +1,88 @@
+
+
+
+
+
+
+.dashBoardContentWrapper{
+
+}
+
+.petsInfoWrapper{
+    display: flex;
+    flex-direction: column;
+}
+
+.petInfoWrapper{
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+
+}
+.petInfoNameContainer{
+    height: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.petInfoNameContainerH2{
+    margin-left: 10px;
+}
+.petInfoNameContainerSpan{
+    margin-left: 20px;
+}
+.petInfoContainer{
+    height: 250px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.petInfoDetailTotalContainer{
+    width: 215px;
+    height: 140px;
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    margin-right: 60px;
+    box-shadow: 0 0 20px #548EAD;
+    color: #548EAD;
+}
+.petInfoDetailRecentContainer{
+    width: 215px;
+    height: 140px;
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    margin-right: 60px;
+    box-shadow: 0 0 20px #548EAD;
+    color: #548EAD;
+}
+.petInfoDetailFeedBackContainer{
+    width: 215px;
+    height: 140px;
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    margin-right: 60px;
+    box-shadow: 0 0 20px #548EAD;
+    color: #548EAD;
+}
+
+.petInfoRecordTitleContainer{
+
+}
+
+
+
+
