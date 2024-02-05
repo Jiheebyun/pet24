@@ -34,7 +34,7 @@ export default function DashBoardNavBar() {
                     }}
                 >
                     <div className={classes.navBarmenuContainer}>
-                        <Link href={'/'}>
+                        <Link href={'/dashboard'}>
                             <Image 
                                 src="/img/dashBoardNavBarIcons/dashBoardNavBarHome.png" 
                                 alt="home"
@@ -44,7 +44,7 @@ export default function DashBoardNavBar() {
                         </Link>
                     </div>
                     <div className={classes.navBarmenuContainer}>
-                        <Link href={'/'}>
+                        <Link href={'/dashboard/newalert'}>
                             <Image 
                                 src="/img/dashBoardNavBarIcons/dashBoardNavBarNotifications.png" 
                                 alt="logo"

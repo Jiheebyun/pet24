@@ -1,0 +1,24 @@
+
+
+.newAlertWrapper{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.newAlertContainer{
+    width: 800px;
+    height: 80px;
+    background-color: #FFE7D5;
+    border-radius: 10px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 30px;
+    margin: 20px;
+    font-weight: 700;
+    position: relative;
+
+}
