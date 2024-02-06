@@ -64,7 +64,7 @@ export default function DashBoardNavBar() {
                         </Link>
                     </div>
                     <div className={classes.navBarmenuContainer}>
-                        <Link href={'/'}>
+                        <Link href={'/dashboard/records'}>
                             <Image 
                                 src="/img/dashBoardNavBarIcons/dashBoardNavBarVector.png" 
                                 alt="logo"

@@ -1,0 +1,20 @@
+
+
+
+
+.recordsWrapper{
+    width: 1000px;
+    height: 100%;
+    background-color: gray;
+
+}
+
+.recordsTitleWrapper{
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.recordsTitleContainer{
+    display: flex;
+}
