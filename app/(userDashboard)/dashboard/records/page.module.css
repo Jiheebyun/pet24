@@ -18,3 +18,10 @@
 .recordsTitleContainer{
     display: flex;
 }
+.recordsTable{
+    margin-top: 25px;
+    border: 1;
+}
+.recordsTable > th {
+    width: 160px;
+}
