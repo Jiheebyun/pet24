@@ -1,12 +1,17 @@
 
+"use client"
 import '../../../app/globals.css';
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import classes from './dashBoardNavBar.module.css';
+import { useSelectedLayoutSegments } from 'next/navigation';
 
 
 export default function DashBoardNavBar() {
+
+    const segment: string[] | null[] = useSelectedLayoutSegments();
+
     return (
         <>
             <div className={classes.dashboardNavBarWrapper}>
@@ -42,6 +47,10 @@ export default function DashBoardNavBar() {
                                 height={40}
                             ></Image>
                         </Link>
+                        <div 
+                            className={segment[0] === "dashboard" && segment.length === 1? 
+                                classes.navBarMenuCurrentVisible : classes.navBarMenuCurrentInvisible}
+                        ></div>
                     </div>
                     <div className={classes.navBarmenuContainer}>
                         <Link href={'/dashboard/newalert'}>
@@ -52,6 +61,10 @@ export default function DashBoardNavBar() {
                                 height={40}
                             ></Image>
                         </Link>
+                        <div 
+                            className={segment[1] === "newalert" ? 
+                                classes.navBarMenuCurrentVisible : classes.navBarMenuCurrentInvisible}
+                        ></div>
                     </div>
                     <div className={classes.navBarmenuContainer}>
                         <Link href={'/'}>
@@ -72,9 +85,13 @@ export default function DashBoardNavBar() {
                                 height={35}
                             ></Image>
                         </Link>
+                        <div 
+                            className={segment[1] === "records" ? 
+                                classes.navBarMenuCurrentVisible : classes.navBarMenuCurrentInvisible}
+                        ></div>
                     </div>
                     <div className={classes.navBarmenuContainer}>
-                        <Link href={'/'}>
+                        <Link href={'/dashboard/profile'}>
                             <Image 
                                 src="/img/dashBoardNavBarIcons/dashBoardNavBarPerson.png" 
                                 alt="logo"
@@ -82,6 +99,10 @@ export default function DashBoardNavBar() {
                                 height={40}
                             ></Image>
                         </Link>
+                        <div 
+                            className={segment[1] === "profile" ? 
+                                classes.navBarMenuCurrentVisible : classes.navBarMenuCurrentInvisible}
+                        ></div>
                     </div>
                 </div>
 

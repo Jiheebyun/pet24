@@ -1,10 +1,14 @@
-
+"use client"
 import Image from "next/image";
 import Link from "next/link";
 import classes from "./navBar.module.css"
+import { useSelectedLayoutSegments } from "next/navigation";
 
 
 export default function NavBar(){
+
+    const segment: string[] | null[] = useSelectedLayoutSegments();
+
     return (
         <>
             <div className={classes.navBarWrapper}>
@@ -31,12 +35,24 @@ export default function NavBar(){
                     ></Image>
                 </div>
                 </div>
-                <div className={classes.manuContainer}>
+                <div className={classes.menuContainer}>
                     <ul>
-                    <li><Link href={"/"} className={classes.LinkStyle}>Home</Link></li>
-                    <li><Link href={"/animalhospitals"} className={classes.LinkStyle}>Animal Hospitals</Link></li>
-                    <li><Link href={"/blogs"} className={classes.LinkStyle}>Blogs</Link></li>
-                    <li><Link href={"/about"} className={classes.LinkStyle}>About</Link></li>
+                    <li><Link 
+                            href={"/"} 
+                            className={segment.length === 0 ? classes.currentLinkStyle: classes.LinkStyle}
+                        >Home</Link></li>
+                    <li><Link 
+                            href={"/animalhospitals"} 
+                            className={segment[0] === "animalhospitals" ? classes.currentLinkStyle: classes.LinkStyle}
+                        >Animal Hospitals</Link></li>
+                    <li><Link 
+                            href={"/blogs"} 
+                            className={segment[0] === "blogs" ? classes.currentLinkStyle: classes.LinkStyle}
+                        >Blogs</Link></li>
+                    <li><Link 
+                            href={"/about"} 
+                            className={segment[0] === "about" ? classes.currentLinkStyle: classes.LinkStyle}
+                        >About</Link></li>
                     </ul>
                 </div>
                 <div className={classes.userContainer}>

@@ -8,7 +8,7 @@
 }
 
 .petInfoWrapper{
-    height: 250px;
+    height: 220px;
     display: flex;
     flex-direction: column;
 
@@ -26,7 +26,7 @@
     margin-left: 20px;
 }
 .petInfoContainer{
-    height: 250px;
+    height: 190px;
     display: flex;
     justify-content: left;
     align-items: center;
