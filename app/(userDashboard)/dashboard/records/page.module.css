@@ -46,11 +46,11 @@
     margin-top: 25px;
 }
 
-.recordTableTbody{
-    border-left:0px solid #ffffff;
-    border-right:0 solid #ffffff;
-    border-top:1px solid #EFF0F6;
-    border-bottom:1px solid #EFF0F6;
+.recordsTableTbody{
+    border-left: 1px solid #ffffff;
+    border-right: 1px solid #ffffff;
+    border-top: 1px solid #EFF0F6;
+    border-bottom: 1px solid #EFF0F6;
 }
 
 .recordsTable th{
@@ -60,6 +60,7 @@
 
 .recordsTableHeaders th{
     border-bottom: 1px solid #EFF0F6;
+    border-right: 1px solid #ffffff;
     color: #222222;
     font-weight: 600;
     font-size: 13px;
@@ -71,13 +72,16 @@
     width: 30px;
 }
 
-.recordsTable tr{
+.recordsTableTbody tr{
     height: 50px;
     text-align: center;
-    border-left:0px solid #ffffff;
-    border-right:0 solid #ffffff;
-    border-top:0px solid #EFF0F6;
-    border-bottom:0px solid #ffffff;
+    border-left: 1px solid #ffffff;
+    border-right: 5px solid #ffffff;
+    border-top: 1px solid #EFF0F6;
+    border-bottom: 1px solid #ffffff;
+}
+.recordsTableTbody tr td {
+    border-right: 5px solid #ffffff;
 }
 
 
