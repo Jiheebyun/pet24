@@ -5,23 +5,149 @@
 .recordsWrapper{
     width: 1000px;
     height: 100%;
-    background-color: gray;
+    padding: 15px;
+    border: 1px solid #EFF0F6;
+    border-radius: 20px;
 
 }
 
 .recordsTitleWrapper{
-    display: flex;
-    justify-content: space-around;
-
 }
 
 .recordsTitleContainer{
     display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+.recordsTitle{
+    display: flex;
+    flex-direction: row;
+}
+
+.recordsDeleteContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    width: 40px;
+    height: 40px;
+    background-color: #bdbdbd;
+    cursor: pointer;
+}
+.recordsDeleteContainer:hover{
+    background-color: #9e9e9e;
+}
+.recordsTitle h3{
+    margin: 7px 0 0 20px;
+    color: #838383;
+}
+
 .recordsTable{
     margin-top: 25px;
-    border: 1;
 }
-.recordsTable > th {
+
+.recordTableTbody{
+    border-left:0px solid #ffffff;
+    border-right:0 solid #ffffff;
+    border-top:1px solid #EFF0F6;
+    border-bottom:1px solid #EFF0F6;
+}
+
+.recordsTable th{
     width: 160px;
+    height: 50px;
+}
+
+.recordsTableHeaders th{
+    border-bottom: 1px solid #EFF0F6;
+    color: #222222;
+    font-weight: 600;
+    font-size: 13px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.recordsTableHeaders > th:nth-child(1){
+    width: 30px;
+}
+
+.recordsTable tr{
+    height: 50px;
+    text-align: center;
+    border-left:0px solid #ffffff;
+    border-right:0 solid #ffffff;
+    border-top:0px solid #EFF0F6;
+    border-bottom:0px solid #ffffff;
+}
+
+
+.recordsTableTitleHeader{
+    width: 130px;
+    height: 25px;
+    background-color: #EFF0F6;
+    border-radius: 5px;
+    margin-left:auto;
+    margin-right:auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.recordsTableTitleHeader span{
+    width: 100%;
+}
+
+.recordsTableVetNameHeader{
+    width: 130px;
+    height: 25px;
+    background-color: #EFF0F6;
+    border-radius: 5px;
+    margin-left:auto;
+    margin-right:auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.recordsOptionsSelect{
+    border: 0px;
+    background-color: #EFF0F6;
+    width: 200px;
+    height: 25px;
+    padding: 0px 15px; 
+    font-family: inherit; 
+    background: url(/img/dashBoardNavBarIcons/downArrow.png) no-repeat 87% 60%;   
+    border-radius: 5px; 
+    -webkit-appearance: none; 
+    -moz-appearance: none;
+    appearance: none;
+}
+.recordsOptionsSelect{
+
+}
+.recordsOptionsSelect label{
+    position: absolute;
+    top: 1px;
+    left: 5px;
+
+    color: #999;
+    z-index: -1;
+}
+
+
+
+.paginationBtn{
+    border: none;
+    outline: none;
+    background-color: inherit ;
+    cursor: pointer;
+}
+.paginationContainer{
+    margin-top: 10px;
+    width: 500px;
+    height: 40px;
+    margin-left:auto;
+    margin-right:auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
