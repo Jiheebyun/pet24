@@ -42,6 +42,18 @@
     align-items: center;
 }
 
+/* .navBarmenuContainer{
+    width: 100px;
+    height: 40px;
+    margin-bottom: 20px;
+    background-color: #FFC297;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+/* path변경시, dashboard navbar 현재위치 CSS */
+
 .navBarmenuContainer{
     width: 100px;
     height: 40px;
@@ -50,6 +62,25 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 0px 5px 0px 0px solid black;
+    position: relative;
+}
+
+.navBarMenuCurrentInvisible{
+    position: absolute;
+    right: 0;
+    width: 5px;
+    height: 40px;
+    background-color: #FF7008;
+    display:none;
+}
+.navBarMenuCurrentVisible{
+    position: absolute;
+    right: 0;
+    width: 5px;
+    height: 40px;
+    background-color: #FF7008;
+    /* display:none; */
 }
 
 .settingConatiner{

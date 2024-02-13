@@ -73,23 +73,34 @@
     background-color: #e2e2e2;
     border-radius: 5px;
 }
-.manuContainer{
+.menuContainer{
     min-width: 410px;
     height: 45px;
     display: flex;
     align-items: center;
 }
-.manuContainer > ul {
+
+.menuContainer > ul {
     display: flex;
     margin: 0;
 }
-.manuContainer > ul > li {
+.menuContainer > ul > li {
     margin: 0px 15px;
     font-weight: 800;
     color: #474747;
     list-style-type: none;
     cursor: pointer;
+    position: relative;
 }
+
+/* 현재 위치하고 있는 path의 CSS */
+.currentMenuContainer{
+    position: absolute;
+    height: 5px;
+    background-color: #548EAD;
+    top: 0px;
+}
+
 .userContainer{
     height: 45px;
     display: flex;
@@ -147,6 +158,12 @@
     text-decoration: none;
     color: #474747;
 }
+
+.currentLinkStyle {
+    text-decoration: none;
+    color: #548EAD;
+}
+
 .LinkBtnStyle{
     text-decoration: none;
     color: #ffffff;
