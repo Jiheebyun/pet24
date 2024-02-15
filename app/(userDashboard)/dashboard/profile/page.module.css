@@ -1,0 +1,71 @@
+
+
+.profileHeader {
+    margin-bottom: 50px;
+}
+
+
+.userInfoWrapper{
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+
+.inputInfoContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.inputContainer{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+}
+.inputContainer input {
+    font-size: 15px;
+    color: #222222;
+    width: 300px;
+    border: none;
+    border-bottom: solid #aaaaaa 1px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    position: relative;
+    background: none;
+    z-index: 5;
+    margin-top: 10px;
+}
+.inputContainer input::placeholder { color: #aaaaaa; }
+.inputContainer input:focus { outline: none; }
+
+.inputContainer label {
+    font-size: 15px;
+    font-weight: 700;    
+}
+
+
+
+.profileBtnContainer{
+    display: flex;
+    align-items: center;
+}
+
+.profileBtnCancel{
+    width: 100px;
+    height: 30px;
+    background-color: #ffffff;
+    border: 2px solid #FF7008;
+    margin-left: 30px;
+    border-radius: 5px;
+}
+
+.profileBtnSave{
+    width: 100px;
+    height: 30px;
+    background-color: #FF7008;
+    border: 0px solid;
+    margin-left: 30px;
+    border-radius: 5px;
+}
